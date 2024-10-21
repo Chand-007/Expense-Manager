@@ -1,0 +1,15 @@
+.tracker-container{
+    width:500px;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:10px;
+}
+
+.tracker-container h1{
+    text-align: center;
+    font-size: 25px;
+    color: rgb(34, 27, 27);
+    margin-bottom: 10px;
+}
