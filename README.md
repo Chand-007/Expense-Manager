@@ -26,7 +26,7 @@ The **Expense Tracker** is a simple and efficient web application built with **R
 1. Clone the repository:
    git clone https://github.com/yourusername/expense-tracker.git
 2. Install Dependencies
-   cd Expense-Manager
+   cd Expense-Manager && 
    npm install
 3. start application
    npm start
