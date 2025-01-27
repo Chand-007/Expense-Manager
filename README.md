@@ -31,3 +31,7 @@ The **Expense Tracker** is a simple and efficient web application built with **R
 3. start application
    npm start
 ---
+
+## screenshots
+
+![Expense Tracker](images/expense.PNG)
