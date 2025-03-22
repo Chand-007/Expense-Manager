@@ -53,12 +53,13 @@ export default function Barchart(){
 
 
         const width = 600;
-        const height = 400;
+        const height = 600;
         const marginTop = 20;
-        const marginRight = 20;
+        const marginRight = 10;
         const marginBottom = 30;
-        const marginLeft = 40;
+        const marginLeft = 60;
 
+        const arrayLike = [0,d3.max(data,(d)=>d.Population)]
 
 
         const x = d3.scaleBand()
@@ -70,7 +71,7 @@ export default function Barchart(){
         const y = d3.scaleLinear()
                   .domain([0,d3.max(data,(d)=>d.Population)])
                   .range([height-marginBottom,marginTop])
-
+  
                 
 
 
@@ -94,7 +95,7 @@ export default function Barchart(){
 
 
         svgElement.append("g")
-        .attr("fill","steelblue")
+        .attr("fill","lightgreen")
         .selectAll()
         .data(data)
         .join("rect")
