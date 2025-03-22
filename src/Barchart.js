@@ -2,62 +2,31 @@ import * as d3 from "d3"
 import { useRef,useEffect } from "react"
 
 
-export default function Barchart(){
+export default function Barchart({income,expense}){
     const ref = useRef()
 
     const data = [
-        {
-          "Name": "Springfield",
-          "Population": 150000
-        },
-        {
-          "Name": "Rivertown",
-          "Population": 85000
-        },
-        {
-          "Name": "Lakeside",
-          "Population": 120000
-        },
-        {
-          "Name": "Mapleton",
-          "Population": 55000
-        },
-        {
-          "Name": "Greenfield",
-          "Population": 98000
-        },
-        {
-          "Name": "Sunnyvale",
-          "Population": 73000
-        },
-        {
-          "Name": "Hilltop",
-          "Population": 40000
-        },
-        {
-          "Name": "Coastline",
-          "Population": 175000
-        },
-        {
-          "Name": "Valleywood",
-          "Population": 67000
-        },
-        {
-          "Name": "Pinecrest",
-          "Population": 56000
-        }
+      {
+        "Name":"Income",
+        "Population":income
+      },
+      {
+        "Name":"Expense",
+        "Population":Math.abs(expense)
+      },
       ]
-      
+
+
 
     useEffect(()=>{
 
 
-        const width = 600;
-        const height = 600;
-        const marginTop = 20;
+        const width = 400;
+        const height = 300;
+        const marginTop = 10;
         const marginRight = 10;
         const marginBottom = 30;
-        const marginLeft = 60;
+        const marginLeft = 40;
 
         const arrayLike = [0,d3.max(data,(d)=>d.Population)]
 
@@ -103,16 +72,18 @@ export default function Barchart(){
         .attr("y",(d)=>y(d.Population))
         .attr("height",(d)=>y(0)-y(d.Population))
         .attr("width",x.bandwidth());
+
         
 
 
     },[])
 
 
+    console.log("Barchart.js component is loaded")
 
     return(
-        <div className="chart-container" style={{"marginLeft":"30px"}}>
-            <h1>THis is Bar Chart Container</h1>
+        <div className="chart-container" style={{"marginLeft":"100px","marginTop":"150px"}}>
+          
             <svg ref={ref}></svg>
         </div>
     )

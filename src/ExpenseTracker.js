@@ -6,11 +6,10 @@ import TransactionContainer from './TransactionContainer'
 
 import { useState,useEffect } from 'react'
 
-export default function ExpenseTracker(){
+export default function ExpenseTracker({income,setIncome,expense,setExpense,dashboard,setDashboard}){
     const [total,setTotal] = useState([])
     const [balance,setBalance] = useState(0)
-    const [income,setIncome] = useState(0)
-    const [expense,setExpense] = useState(0)
+    
     useEffect(()=>{
         calculateExpense()
     },[total])
@@ -30,6 +29,7 @@ export default function ExpenseTracker(){
             <BalanceFigContainer expense={expense} income={income}/>
             <HistoryContainer total={total}/>
             <TransactionContainer total={total} setTotal={setTotal}/>
+            <button onClick={()=>setDashboard(prev=>!prev)}>ViewDashboard</button>
         </div>
     )
 }
